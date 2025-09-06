@@ -13,7 +13,7 @@ export const Pokemon = () => {
             const detailedPokemonData = data.results.map( async(curPokemon) => {
                 const res = await fetch(curPokemon.url);
                 const data = res.json();
-                return data
+                return data;
             });
 
         }catch(error){
