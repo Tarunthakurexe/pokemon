@@ -1,7 +1,11 @@
 export const PokemonCards = ({pokemonData}) => {
     return <li className="pokemon-card">
         <figure>
-            <img src={pokemonData.sprites.other.dream_world.front_default} 
+            <img src={
+                pokemonData.sprites?.other?.dream_world?.front_default || 
+                pokemonData.sprites?.other?.['official-artwork']?.front_default || 
+                pokemonData.sprites?.front_default ||
+                '/placeholder.png'} 
             alt={pokemonData.name} 
             className="pokemon-image"/>
         </figure>
